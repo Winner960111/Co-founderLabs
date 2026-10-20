@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>CoFoundersLab Connect Bot</h1>
+    <span id="status" class="pill">Idle</span>
+  </header>
+
+  <label for="template">Connection note</label>
+  <textarea id="template" rows="6"></textarea>
+  <p class="hint">Placeholders: <code>{firstName}</code> <code>{name}</code> <code>{location}</code>. Must start with a letter or number.</p>
+
+  <div class="grid">
+    <label>Min delay (s)<input id="minDelay" type="number" min="5"></label>
+    <label>Max delay (s)<input id="maxDelay" type="number" min="5"></label>
+    <label>Max per run<input id="maxPerRun" type="number" min="1"></label>
+    <label>Daily limit<input id="dailyLimit" type="number" min="1"></label>
+  </div>
+  <label class="check"><input id="autoPaginate" type="checkbox"> Go through all pages (Next)</label>
+
+  <div class="buttons">
+    <button id="start" class="primary">Start</button>
+    <button id="stop">Stop</button>
+  </div>
+
+  <div class="stats">
+    Today: <b id="sentToday">0</b> · Total: <b id="total">0</b>
+    <a href="#" id="resetHistory" title="Forget which profiles were already messaged or skipped">reset history</a>
+  </div>
+
+  <div class="logs-head">
+    <span>Activity</span><a href="#" id="clearLogs">clear</a>
+  </div>
+  <div id="logs"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

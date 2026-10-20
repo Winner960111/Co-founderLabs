@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "CoFoundersLab Connect Bot",
+  "version": "2.0.0",
+  "description": "Sends your template connection note to US & Canada founders on CoFoundersLab's Find a CoFounder page.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://*.cofounderslab.com/*"],
+  "action": {
+    "default_title": "CoFoundersLab Connect Bot",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.cofounderslab.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
